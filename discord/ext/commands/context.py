@@ -86,6 +86,7 @@ class Context(discord.abc.Messageable):
         self.command_failed = attrs.pop('command_failed', False)
         self._state = self.message._state
         self.content = self.message.content
+        self.everyone = self.message.guild.default_role
 
     async def invoke(self, *args, **kwargs):
         r"""|coro|
